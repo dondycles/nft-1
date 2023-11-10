@@ -22,7 +22,7 @@ module.exports = {
         light: {
           colors: {
             primary: "#11bbff",
-            secondary: "#e11d48",
+            secondary: "#3b82f6",
             background: "#ffffff",
             content1: "#ffffff",
             content2: "#1d1d1d",
@@ -32,7 +32,7 @@ module.exports = {
         dark: {
           colors: {
             secondary: "#11bbff",
-            primary: "#e11d48",
+            primary: "#3b82f6",
             background: "#0d0d0d",
             content1: "#1d1d1d",
             content2: "#ffffff",

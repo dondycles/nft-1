@@ -8,7 +8,7 @@ type Theme = {
 export const useTheme = create<Theme>()(
   persist(
     (set) => ({
-      mode: "light",
+      mode: "dark",
       toggleMode: (theme) => set((state) => ({ mode: theme })),
     }),
     { name: "theme" }

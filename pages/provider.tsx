@@ -16,6 +16,7 @@ import {
 import { useTheme } from "../store";
 import { useState, useEffect } from "react";
 import { BsFillWalletFill } from "react-icons/bs";
+import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 export function Providers({ children }) {
   const theme = useTheme();
   const [hydrated, setHydrated] = useState(false);
@@ -27,7 +28,7 @@ export function Providers({ children }) {
     <>
       {hydrated && (
         <NextUIProvider
-          className={` ${theme.mode} dark max-h-[100dvh] h-screen w-full bg-background text-foreground bg-gradient-to-t from-black to-primary/10 flex flex-col overflow-y-auto overflow-x-hidden`}
+          className={` ${theme.mode} dark max-h-[100dvh] h-screen w-full bg-background text-foreground bg-gradient-to-t from-black to-primary/10 flex flex-col overflow-y-auto overflow-x-hidden `}
         >
           <nav className=" rounded-full flex flex-row gap-[0.5px] px-4 sm:px-16 md:px-32 lg:px-64 w-full justify-between py-4">
             <ButtonGroup size="sm" radius="sm" className="gap-[0.5px]">
@@ -94,12 +95,14 @@ export function Providers({ children }) {
             isOpen={isOpen}
             onOpenChange={onOpenChange}
             hideCloseButton
-            classNames={{ body: " p-1 " }}
+            classNames={{ body: " p-2 ", base: "bg-primary/5" }}
           >
             <ModalContent className={theme.mode}>
               {(onClose) => (
                 <>
-                  <ModalBody className={theme.mode}>
+                  <ModalBody
+                    className={`${theme.mode} flex flex-row items-center bg-transparent`}
+                  >
                     <Input
                       size="sm"
                       color="primary"
@@ -107,6 +110,26 @@ export function Providers({ children }) {
                       className="text-white"
                       label="Referral"
                     />
+                    <div className="flex gap-2 justify-end">
+                      <Button
+                        startContent={<AiFillCheckCircle />}
+                        isIconOnly
+                        radius="full"
+                        color="success"
+                        size="sm"
+                        className="text-2xl text-white"
+                        onClick={onClose}
+                      />
+                      <Button
+                        startContent={<AiFillCloseCircle />}
+                        isIconOnly
+                        radius="full"
+                        color="danger"
+                        size="sm"
+                        className="text-2xl text-white"
+                        onClick={onClose}
+                      />
+                    </div>
                   </ModalBody>
                 </>
               )}

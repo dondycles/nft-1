@@ -17,7 +17,7 @@ import { useTheme } from "../store";
 import { useState, useEffect } from "react";
 import { BsFillWalletFill } from "react-icons/bs";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
-export function Providers({ children }) {
+export default function Providers({ children }) {
   const theme = useTheme();
   const [hydrated, setHydrated] = useState(false);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
